@@ -1,0 +1,84 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5vw 2vw;
+  gap: 2vw;
+  margin-top: 10vw;
+}
+
+.contacts-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #00417A;
+  margin: 0;
+}
+
+.contacts-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 300;
+  color: #2C2C2C;
+  max-width: 60vw;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contacts-image {
+  width: 15vw;
+  height: auto;
+  border-radius: 50%;
+  margin: 2vw 0;
+}
+
+.contacts-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5vw;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.contacts-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 400;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.contacts-number,
+.contacts-email {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.contacts ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  list-style: none;
+  margin: 2vw 0 0 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.contacts li {
+  display: flex;
+}
+
+.contacts li img {
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contacts li img:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,236 @@
+.homepage {
+  position: relative;
+  width: 101vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.homepage-main-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -1vw;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.homepage-fog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0.7) 85%,
+    rgba(255, 255, 255, 0.9) 95%,
+    white 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.homepage-content {
+  position: relative;
+  z-index: 1;
+  padding: 6vw 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.homepage-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 5vw;
+  width: 60vw;
+  font-weight: 700;
+  color: white;
+  text-align: left;
+  margin-bottom: 24vw;
+  margin-right: 21vw;
+}
+
+.homepage-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.75vw;
+  font-weight: 300;
+  width: 50vw;
+  color: white;
+  text-align: left;
+  margin-right: 21vw;
+  position: absolute;
+  left: 10vw;
+  top: 23vw;
+}
+
+.homepage-button {
+  top: 30vw;
+  left: 10vw;
+  position: absolute;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 400;
+  background-color: #00417A;
+  padding: 1vw 2vw;
+  color: #ffffff;
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.homepage-trip-section {
+  margin-top: 10vw;
+}
+
+.homepage-trip-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 3vw;
+  font-weight: 700;
+  color: #00417A;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+.homepage-trip-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1vw;
+  color: #2C2C2C;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: 2vw;
+  font-weight: 300;
+}
+
+.homepage-trip-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 500;
+  background-color: #00417A;
+  color: white;
+  border: none;
+  padding: 1vw 2vw;
+  border-radius: 0.7vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2vw;
+}
+
+.homepage-trip-button:hover {
+  background-color: #003366;
+}
+
+.homepage-aboutus-section {
+  display: flex;
+  align-items: center;
+  padding: 5vw 2vw;
+  gap: 3vw;
+  margin-top: 10vw;
+}
+
+.homepage-aboutus-image {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-left: -2vw;
+}
+
+.homepage-aboutus-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.homepage-aboutus-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 4vw;
+  font-weight: 800;
+  color: #00417A;
+  margin: 0;
+}
+
+.homepage-aboutus-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 300;
+  color: #2C2C2C;
+  line-height: 1.6;
+  margin: 0;
+  width: 50vw;
+}
+
+.homepage-aboutus-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  list-style: none;
+  margin: 2vw 0 0 10vw;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.homepage-aboutus-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.homepage-aboutus-list-item-icon {
+  width: 3vw;
+  height: 3vw;
+  margin-bottom: 1vw;
+}
+
+.homepage-aboutus-list-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 1vw;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.homepage-other-content {
+  top: 8vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.homepage-whyus-text,.homepage-gallery-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #00417A;
+  margin-bottom: 5vw;
+}
+.homepage-gallery-text {
+  margin-top: 10vw;
+}
+
+.homepage-gallery-img {
+  width: 100vw;
+}

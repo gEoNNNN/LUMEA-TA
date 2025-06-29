@@ -21,8 +21,12 @@ const translations = {
   }
 };
 
-const Navbar = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface NavBarProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
+
+const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleLanguageChange = (lang: 'ro' | 'ru') => {

@@ -1,0 +1,40 @@
+{
+  "ro": {
+    "homepage": {
+      "title": "Viața este o aventură. Alege-ți drumul!",
+      "description": "Cu noi, fiecare călătorie devine o oportunitate de a descoperi lumea, pe tine însuți și noi orizonturi.",
+      "button": "Despre noi",
+      "trip": "Tururi",
+      "tripButton": "Rezervă-ți locul",
+      "tripDescription": "Făcând clic pe buton, îți dai consimțământul pentru prelucrarea datelor personale și ești de acord cu politica de confidențialitate.",
+      "whyus":"Dece sa calătorești cu noi?",
+      "gallery":"Galerie" 
+    },
+     "aboutus":{
+      "title": "Despre Noi",
+      "description": "Lumea Ta este mai mult decât o agenție de turism – este o comunitate de oameni pasionați de natură, mișcare și explorare autentică. Oferim experiențe personalizate de trekking, hiking, expediții, tururi tematice, ciclism montan, retreaturi și programe pentru familii sau grupuri corporate. Suntem ghizi licențiați, cu expertiză montană și logistică solidă, care pun pe primul loc siguranța, profesionalismul și conexiunea autentică cu natura. Fiecare tur este gândit cu grijă – de la alegerea traseului și a locurilor de cazare, până la micile detalii care transformă o simplă drumeție într-o amintire de neuitat.",
+      "icon1": "Sigur",
+      "icon2": "Rapid",
+      "icon3": "Ieftin"
+    }
+  },
+  "ru": {
+    "homepage": {
+      "title": "Жизнь - это приключение. Выбери свой путь!",
+      "description": "С нами каждое путешествие становится возможностью открыть мир, себя и новые горизонты.",
+      "button": "О нас",
+      "trip": "Tururi",
+      "tripButton": "Rezervă-ți locul",
+      "tripDescription": "Făcând clic pe buton, îți dai consimțământul pentru prelucrarea datelor personale și ești de acord cu politica de confidențialitate.",
+      "whyus":"Dece sa calătorești cu noi?",
+      "gallery":"Galerie" 
+    },
+    "aboutus":{
+      "title": "Despre noi",
+      "description": "Lumea Ta este mai mult decât o agenție de turism – este o comunitate de oameni pasionați de natură, mișcare și explorare autentică. Oferim experiențe personalizate de trekking, hiking, expediții, tururi tematice, ciclism montan, retreaturi și programe pentru familii sau grupuri corporate. Suntem ghizi licențiați, cu expertiză montană și logistică solidă, care pun pe primul loc siguranța, profesionalismul și conexiunea autentică cu natura. Fiecare tur este gândit cu grijă – de la alegerea traseului și a locurilor de cazare, până la micile detalii care transformă o simplă drumeție într-o amintire de neuitat.",
+      "icon1": "Sigur",
+      "icon2": "Rapid",
+      "icon3": "Ieftin"
+    }
+  }
+}

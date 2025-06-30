@@ -1,4 +1,5 @@
 import './navbar.css';
+import { Link } from 'react-router-dom';
 import navbarbg from "../assets/navbarbg.png"
 import logo from "../assets/logo.svg"
 import tiktok from "../assets/tiktok.svg"
@@ -40,9 +41,9 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="navbar-menu">
-        <a href="#home">{translations[currentLang].home}</a>
+        <Link to="/">{translations[currentLang].home}</Link>
         <a href="#calendar">{translations[currentLang].calendar}</a>
-        <a href="#blog">{translations[currentLang].blog}</a>
+        <Link to="/blog">{translations[currentLang].blog}</Link>
         <a href="#contacts">{translations[currentLang].contacts}</a>
         <div className="language-switcher">
           <button 

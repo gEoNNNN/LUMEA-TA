@@ -42,7 +42,7 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
       </div>
       <div className="navbar-menu">
         <Link to="/">{translations[currentLang].home}</Link>
-        <a href="#calendar">{translations[currentLang].calendar}</a>
+        <Link to="/calendar">{translations[currentLang].calendar}</Link>
         <Link to="/blog">{translations[currentLang].blog}</Link>
         <a href="#contacts">{translations[currentLang].contacts}</a>
         <div className="language-switcher">

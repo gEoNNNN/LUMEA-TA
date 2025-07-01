@@ -1,0 +1,22 @@
+{
+  "ro": {
+    "Maroc": {
+      "title": "Descoperim Marocul",
+      "description": "Adrenalina si distractie la maxim!",
+      "period": "20-27 SEPTEMBRIE 2025",
+      "duration": "8 zile",
+      "difficulty" : "Sporturi și ascensiune",
+      "price": "1260€"
+    }
+  },
+  "ru": {
+    "Maroc": {
+      "title": "Жизнь - это приключение. Выбери свой путь!",
+      "description": "Adrenalina si distractie la maxim!",
+      "period": "20-27 SEPTEMBRIE 2025",
+      "duration": "8 zile",
+      "difficulty" : "Sporturi și ascensiune",
+      "price": "1260€"
+    }
+  }
+}

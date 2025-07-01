@@ -1,0 +1,130 @@
+.abouttrip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vw 2vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.abouttrip-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  color: #00417A;
+  text-align: center;
+  margin: 0 0 4vw 0;
+}
+
+.abouttrip-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 3vw;
+  width: 100%;
+  max-width: 80vw;
+}
+
+.abouttrip-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1vw;
+  flex: 1;
+  justify-content: center;
+}
+
+.abouttrip-list-item-img {
+  width: 3vw;
+  height: 3vw;
+  object-fit: contain;
+}
+
+.abouttrip-list-item-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin: 0;
+  text-align: left;
+}
+
+.abouttrip-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3vw;
+  font-weight: 500;
+  background-color: #00417A;
+  color: white;
+  border: none;
+  padding: 1.5vw 3vw;
+  border-radius: 1vw;
+  cursor: pointer;
+  margin: 4vw 0 2vw 0;
+  transition: background-color 0.3s ease;
+}
+
+.abouttrip-button:hover {
+  background-color: #003366;
+}
+
+.abouttrip-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1vw;
+  font-weight: 300;
+  color: #666666;
+  text-align: center;
+  max-width: 60vw;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.trippage-informations {
+  position: relative;
+  z-index: 100;
+  margin-top: 100vh; 
+  background-color: white; 
+  padding-top: 5vw; 
+}
+
+.trippage-informations-about {
+  width: 100%;
+}
+
+.abouttrip-list-item-value {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2vw;
+}
+
+@media (max-width: 768px) {
+  .abouttrip-list {
+    flex-direction: column;
+    gap: 2vw;
+  }
+  
+  .abouttrip-list-item {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .abouttrip-title {
+    font-size: 6vw;
+  }
+  
+  .abouttrip-list-item-title {
+    font-size: 3vw;
+  }
+  
+  .abouttrip-button {
+    font-size: 4vw;
+    padding: 3vw 6vw;
+  }
+  
+  .abouttrip-description {
+    font-size: 2.5vw;
+    max-width: 90vw;
+  }
+}

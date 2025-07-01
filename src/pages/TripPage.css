@@ -1,0 +1,78 @@
+.trippage {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.trippage-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.trippage-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.trippage-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 6vw;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10vw; 
+  z-index: 2;
+  margin-top: -15vw;
+}
+
+.trippage-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 3vw; 
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin: 0;
+  z-index: 2;
+}
+
+.trippage-fog-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0.7) 85%,
+    rgba(255, 255, 255, 0.9) 95%,
+    white 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.trippage-footer {
+  position: relative;
+  margin-top: 60vw;
+  z-index: 100;
+}

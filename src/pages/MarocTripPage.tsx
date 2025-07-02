@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './TripPage.css';
+import './MarocTripPage.css';
 import NavBar from "../components/navbar";
 import translations from "./TripPage.json";
 import Footer from "../components/footer";
 import Contacts from "../components/contacts";
 import bg from "../assets/maroc ng.jpg"
 import About from "../components/abouttrip";
+import TripDescription from "../components/treidescription";
+import marocdescription from "../assets/marocdescription.jpg"; 
 
 const TripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -22,11 +24,15 @@ const TripPage: React.FC = () => {
       <div className='trippage-informations'>
         <div className='trippage-informations-about'>
             <About currentLang={currentLang} period={translations[currentLang].Maroc.period} duration={translations[currentLang].Maroc.duration} difficulty={translations[currentLang].Maroc.difficulty} price={translations[currentLang].Maroc.price}/>
+            <TripDescription 
+              currentLang={currentLang}
+              description={translations[currentLang].Maroc.tripDescription}
+              text={translations[currentLang].Maroc.tripText}
+              image={marocdescription}
+            />
+            <Contacts currentLang={currentLang}/>
+            <Footer currentLang={currentLang}/>
         </div>
-      </div>
-      <div className='trippage-footer'>
-        <Contacts currentLang={currentLang}/>
-        <Footer currentLang={currentLang}/>
       </div>
     </div>
   );

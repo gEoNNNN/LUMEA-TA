@@ -71,8 +71,25 @@
   pointer-events: none;
 }
 
+.trippage-informations {
+  position: relative;
+  z-index: 100;
+  margin-top: 95vh; /* Reduced from 100vh to 95vh */
+  background-color: white; 
+  padding: 5vw 0; /* Simplified padding */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.trippage-informations-about {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
 .trippage-footer {
   position: relative;
-  margin-top: 60vw;
   z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
 }

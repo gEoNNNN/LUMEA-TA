@@ -7,7 +7,14 @@ import Contacts from "../components/contacts";
 import bg from "../assets/santiagobg.jpg"
 import About from "../components/abouttrip";
 import TripDescription from "../components/treidescription";
-import santiagodescription from "../assets/santiagodescription.jpg"; 
+import santiagodescription from "../assets/santiagodescription.jpg";
+import Calendar from '../components/calendar'; 
+import day1Image from "../assets/SantiagoCalendar1.jpg";
+import day2Image from "../assets/SantiagoCalendar2.jpg";
+import day3Image from "../assets/SantiagoCalendar3.jpg";
+import day4Image from "../assets/SantiagoCalendar4.jpg";
+import day5Image from "../assets/SantiagoCalendar5.jpg";
+
 
 const SantiagoTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -30,8 +37,21 @@ const SantiagoTripPage: React.FC = () => {
               text={translations[currentLang].Santiago.tripText}
               image={santiagodescription}
             />
+            <Calendar 
+                currentLang={currentLang}
+                buttonCount={translations[currentLang].Santiago.calendarDays.length} 
+                buttonTexts={translations[currentLang].Santiago.calendarDays} 
+                buttonContents={translations[currentLang].Santiago.calendarContents}
+                buttonImages={[
+                day1Image,
+                day2Image,
+                day3Image,
+                day4Image,
+                day5Image
+              ]}/>
             <Contacts currentLang='ru'/>
             <Footer currentLang='ru'/>
+            
         </div>
       </div>
     </div>

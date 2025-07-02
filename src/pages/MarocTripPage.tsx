@@ -8,6 +8,22 @@ import bg from "../assets/maroc ng.jpg"
 import About from "../components/abouttrip";
 import TripDescription from "../components/treidescription";
 import marocdescription from "../assets/marocdescription.jpg"; 
+import Calendar from '../components/calendar';
+import day1Image from "../assets/MarocCalendar1.jpg";
+import day2Image from "../assets/MarocCalendar2.jpg";
+import day3Image from "../assets/MarocCalendar3.jpg";
+import day4Image from "../assets/MarocCalendar4.jpg";
+import day5Image from "../assets/MarocCalendar5.jpg";
+import day6Image from "../assets/MarocCalendar6.jpg";
+import day7Image from "../assets/MarocCalendar7.jpg";
+import day8Image from "../assets/MarocCalendar8.jpg";
+import priceinfo1ro from "../assets/pretinfoMaroc1.jpg"
+import priceinfo2ro from "../assets/pretinfoMaroc2.jpg"
+import priceinfo3ro from "../assets/pretinfoMaroc3.jpg"
+import priceinfo1ru from "../assets/pretinfoMaroc1ru.jpg"
+import priceinfo2ru from "../assets/pretinfoMaroc2ru.jpg"
+import priceinfo3ru from "../assets/pretinfoMaroc3ru.jpg"
+import Echpament from "../components/echipamnt"
 
 const TripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -30,6 +46,36 @@ const TripPage: React.FC = () => {
               text={translations[currentLang].Maroc.tripText}
               image={marocdescription}
             />
+            <Calendar 
+                currentLang={currentLang}
+                buttonCount={translations[currentLang].Maroc.calendarDays.length} 
+                buttonTexts={translations[currentLang].Maroc.calendarDays} 
+                buttonContents={translations[currentLang].Maroc.calendarContents}
+                buttonImages={[
+                day1Image,
+                day2Image,
+                day3Image,
+                day4Image,
+                day5Image,
+                day6Image,
+                day7Image,
+                day8Image
+              ]}
+              />
+            <h1 className="trippage-info-title">{translations[currentLang].Maroc.sectionPriceTitle}</h1>
+            <h1 className="trippage-price">{translations[currentLang].Maroc.sectionPriceDescritpion}</h1>
+            <ul className="trippage-info-list">
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo1ru : priceinfo1ro} />
+              </li>
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo2ru : priceinfo2ro} />
+              </li>
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo3ru : priceinfo3ro} />
+              </li>
+            </ul>
+            <Echpament currentLang={currentLang}/>
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>
         </div>

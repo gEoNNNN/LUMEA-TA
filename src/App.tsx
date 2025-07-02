@@ -5,6 +5,7 @@ import BlogPage from "./pages/BlogPage"
 import ProgramrarePage from './pages/ProgramrarePage'
 import Maroc from "./pages/MarocTripPage"
 import China from "./pages/ChinaTripPage"
+import Santiago from "./pages/SantiagoTripPage"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/calendar" element={<ProgramrarePage />} />
         <Route path="/maroc" element={<Maroc />} />
         <Route path="/china" element={<China />} />
+        <Route path="/santiago" element={<Santiago />} />
       </Routes>
     </Router>
   )

@@ -31,6 +31,7 @@ import allineedtoknoeimg5 from "../assets/marocalltoknow5.jpg"
 import blueline from "../assets/longblueline.svg"
 import Timer from "../components/timer"
 import chinatimer from "../assets/chinatimer.jpg"
+import LiveChat from '../components/LiveChat';
 
 const ChinaTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -38,6 +39,7 @@ const ChinaTripPage: React.FC = () => {
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      <LiveChat/>
       <img src={bg} className='trippage-bg'/>
       <div className="trippage-fog-overlay"></div>
       <div className="trippage-content">

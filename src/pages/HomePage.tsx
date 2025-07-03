@@ -5,6 +5,7 @@ import translations from "./Homepage.json"
 import Bg from "../assets/homemainbg.jpg"
 //import secondaryBG from "../assets/homebg.svg"
 //import Carousel from '../components/carusel';
+import LiveChat from '../components/LiveChat';
 import TripCarousel from "../components/tripcarusel"
 import abotusimage from "../assets/desprenoi.jpg"
 import icon1 from "../assets/icon1.svg"
@@ -40,6 +41,7 @@ const HomePage: React.FC = () => {
       <img src={Bg} className='homepage-main-bg' />
       <div className="homepage-fog-overlay"></div>
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      <LiveChat/>
       <div className="homepage-content">
         <h1 className='homepage-title'>{translations[currentLang].homepage.title}</h1>
         <h1 className="homepage-description">{translations[currentLang].homepage.description}</h1>

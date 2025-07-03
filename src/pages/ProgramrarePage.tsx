@@ -9,6 +9,7 @@ import card4 from "../assets/programrarecard4.png"
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 import Contacts from "../components/contacts";
+import LiveChat from '../components/LiveChat';
 
 const translations = {
   ru: {
@@ -51,6 +52,7 @@ const ProgramrarePage: React.FC = () => {
   return (
     <div className="programrare-page">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+      <LiveChat/>
       <img src={mainbg} className="programrare-page-mainbg" />
       <div className="programrare-page-fog-overlay"></div>
       <img src={secondbg} className="programrare-page-secondbg" />

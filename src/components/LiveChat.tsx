@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./LiveChat.css";
-import livechatopenbg from "./assets/Group 71.png"
-import closebutton from "./assets/closebutton.png"
-import sendicon from "./assets/sendicon.png"
-import chatboticon from "./assets/chaticon.png"
+import livechatopenbg from "../assets/Group 71.png"
+import closebutton from "../assets/closebutton.png"
+import sendicon from "../assets/sendicon.png"
+import chatboticon from "../assets/logo.svg"
 
 type ChatMessage = {
   id: number;
@@ -12,8 +12,7 @@ type ChatMessage = {
 };
 
 const initialMessages: ChatMessage[] = [
-  { id: 1, text: "Hey! 👋 Eu sunt Krov Acoperișuri un assistent digital.", from: "bot" },
-  { id: 2, text: "Cu ce te pot ajuta astăzi?", from: "bot" }
+  { id: 1, text: "👋 Bun venit pe site-ul Lumea Ta! Cu ce te pot ajuta astăzi?", from: "bot" },
 ];
 
 const LiveChat: React.FC = () => {
@@ -61,7 +60,6 @@ const LiveChat: React.FC = () => {
             alt="Close"
             onClick={() => setOpen(false)}
           />
-          <h1 className="live-chat-open-title">Krov Acoperișuri</h1>
           {/* Messages container */}
           <div className="livechat-messages">
             {messages.map(msg => (

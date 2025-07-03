@@ -29,6 +29,7 @@ import priceinfo3ro from "../assets/priceonfosinagpor3.jpg"
 import priceinfo1ru from "../assets/priceonfosinagpor1.jpg"
 import priceinfo2ru from "../assets/priceonfosinagpor2.jpg"
 import priceinfo3ru from "../assets/priceonfosinagpor3.jpg"
+import LiveChat from '../components/LiveChat';
 
 const SantiagoTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ru');
@@ -46,6 +47,7 @@ const SantiagoTripPage: React.FC = () => {
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={preventLanguageChange} />
+      <LiveChat/>
       <img src={bg} className='trippage-bg'/>
       <div className="trippage-fog-overlay"></div>
       <div className="trippage-content">

@@ -20,6 +20,7 @@ import card2ru from "../assets/blogcard2ru.jpg";
 import card3ru from "../assets/blogcard3ru.jpg";
 import cardblog1ru from "../assets/cardblog1ru.jpg";
 import cardblog2ru from "../assets/cardblog2ru.jpg";
+import LiveChat from '../components/LiveChat';
 
 const BlogPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -31,6 +32,7 @@ const BlogPage: React.FC = () => {
             <img src={secBg} className='blogpage-second-bg' />
             <div className="blogpage-fog-overlay"></div>
             <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
+            <LiveChat/>
             <div className="blogpage-title-container">
                 <h1 className='blogpage-title'>{translations[currentLang].blog.title}</h1>
             </div>

@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import HomePage from "./pages/HomePage"
 import BlogPage from "./pages/BlogPage"
 import ProgramrarePage from './pages/ProgramrarePage'
@@ -26,7 +26,7 @@ function App() {
         <Route path="/calendar" element={<ProgramrarePage currentLang={currentLang} setCurrentLang={setCurrentLang} />} />
         <Route path="/maroc" element={<Maroc currentLang={currentLang} setCurrentLang={setCurrentLang} />} />
         <Route path="/china" element={<China currentLang={currentLang} setCurrentLang={setCurrentLang} />} />
-        <Route path="/santiago" element={<Santiago currentLang={currentLang} setCurrentLang={setCurrentLang} />} />
+        <Route path="/santiago" element={<Santiago />} />
         <Route path="/inwork" element={<InWork currentLang={currentLang} setCurrentLang={setCurrentLang} />} />
       </Routes>
     </Router>

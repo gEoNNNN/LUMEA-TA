@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Add this import
+//import { useNavigate } from 'react-router-dom'; // Add this import
 import "./timer.css"
 
 const translations = {
@@ -38,7 +38,7 @@ const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, d
     seconds: 0
   });
 
-  const navigate = useNavigate(); // Add this line
+  //const navigate = useNavigate(); // Add this line
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -66,15 +66,15 @@ const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, d
     return () => clearInterval(timer);
   }, [date]);
 
-  const handleCalendarScroll = () => {
-    window.location.hash = "#calendar";
-    setTimeout(() => {
-      const calendarElement = document.getElementById('calendar');
-      if (calendarElement) {
-        calendarElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
+  // const handleCalendarScroll = () => {
+  //   window.location.hash = "#calendar";
+  //   setTimeout(() => {
+  //     const calendarElement = document.getElementById('calendar');
+  //     if (calendarElement) {
+  //       calendarElement.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   }, 100);
+  // };
 
   const handleInfoTitleScroll = () => {
     const infoTitleElement = document.querySelector('.trippage-invisible-mark');

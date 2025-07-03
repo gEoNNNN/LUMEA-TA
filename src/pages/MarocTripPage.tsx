@@ -24,6 +24,12 @@ import priceinfo1ru from "../assets/pretinfoMaroc1ru.jpg"
 import priceinfo2ru from "../assets/pretinfoMaroc2ru.jpg"
 import priceinfo3ru from "../assets/pretinfoMaroc3ru.jpg"
 import Echpament from "../components/echipamnt"
+import allineedtoknoeimg1 from "../assets/marocalltoknow1.jpg"
+import allineedtoknoeimg2 from "../assets/marocalltoknow2.jpg"
+import allineedtoknoeimg3 from "../assets/marocalltoknow3.jpg"
+import allineedtoknoeimg4 from "../assets/marocalltoknow1.jpg"
+import allineedtoknoeimg5 from "../assets/marocalltoknow5.jpg"
+import blueline from "../assets/longblueline.svg"
 
 const TripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -75,7 +81,25 @@ const TripPage: React.FC = () => {
                 <img src={currentLang === 'ru' ? priceinfo3ru : priceinfo3ro} />
               </li>
             </ul>
-            <Echpament currentLang={currentLang}/>
+            <Echpament currentLang={currentLang} itemDescriptions={translations[currentLang].Maroc.echipament}/>
+            <Calendar 
+                currentLang={currentLang}
+                buttonCount={translations[currentLang].Maroc.allneedtoknow.length} 
+                buttonTexts={translations[currentLang].Maroc.allneedtoknow} 
+                buttonContents={translations[currentLang].Maroc.allneedtoknowContent}
+                buttonImages={[
+                allineedtoknoeimg1,
+                allineedtoknoeimg2,
+                allineedtoknoeimg3,
+                allineedtoknoeimg4,
+                allineedtoknoeimg5
+              ]}/>
+              <h1 className='trippage-nevoie-title'>{translations[currentLang].Maroc.nevoietitle}</h1>
+              <div 
+                className='trippage-nevoie-descritpion' 
+                dangerouslySetInnerHTML={{ __html: translations[currentLang].Maroc.nevoiedescription }}
+              />
+              <img src={blueline} className='trippage-nevoie-blueline' />            
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>
         </div>

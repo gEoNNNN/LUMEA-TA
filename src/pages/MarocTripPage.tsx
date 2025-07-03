@@ -39,7 +39,6 @@ const TripPage: React.FC = () => {
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <img src={bg} className='trippage-bg'/>
       <div className="trippage-fog-overlay"></div>
       <div className="trippage-content">
         <h1 className="trippage-title">{translations[currentLang].Maroc.title}</h1>
@@ -47,6 +46,7 @@ const TripPage: React.FC = () => {
       </div>
       <div className='trippage-informations'>
         <div className='trippage-informations-about'>
+          <img src={bg} className='trippage-bg'/>
             <About currentLang={currentLang} period={translations[currentLang].Maroc.period} duration={translations[currentLang].Maroc.duration} difficulty={translations[currentLang].Maroc.difficulty} price={translations[currentLang].Maroc.price}/>
             <TripDescription 
               currentLang={currentLang}

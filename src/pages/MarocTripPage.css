@@ -74,9 +74,9 @@
 .trippage-informations {
   position: relative;
   z-index: 100;
-  margin-top: 95vh; /* Reduced from 100vh to 95vh */
+  margin-top: 95vh;
   background-color: white; 
-  padding: 5vw 0; /* Simplified padding */
+  padding: 5vw 0 0 0; 
   width: 100%;
   box-sizing: border-box;
 }
@@ -85,6 +85,8 @@
   width: 100%;
   position: relative;
   box-sizing: border-box;
+  padding-bottom: 0; 
+  margin-bottom: 0; 
 }
 
 .trippage-footer {
@@ -92,6 +94,18 @@
   z-index: 100;
   width: 100%;
   box-sizing: border-box;
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.trippage-footer .contacts {
+  margin-bottom: 0 !important;
+}
+
+.trippage-footer .footer {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .trippage-info-title,.trippage-price,.trippage-nevoie-title {

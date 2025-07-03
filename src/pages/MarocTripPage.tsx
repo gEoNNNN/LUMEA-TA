@@ -30,6 +30,8 @@ import allineedtoknoeimg3 from "../assets/marocalltoknow3.jpg"
 import allineedtoknoeimg4 from "../assets/marocalltoknow1.jpg"
 import allineedtoknoeimg5 from "../assets/marocalltoknow5.jpg"
 import blueline from "../assets/longblueline.svg"
+import Timer from "../components/timer"
+import maroctimer from "../assets/maroctimer.jpg"
 
 const TripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -99,7 +101,14 @@ const TripPage: React.FC = () => {
                 className='trippage-nevoie-descritpion' 
                 dangerouslySetInnerHTML={{ __html: translations[currentLang].Maroc.nevoiedescription }}
               />
-              <img src={blueline} className='trippage-nevoie-blueline' />            
+              <img src={blueline} className='trippage-nevoie-blueline' />
+              <Timer 
+                currentLang={currentLang}
+                image={maroctimer}
+                title={translations[currentLang].Maroc.timertitle}
+                description={translations[currentLang].Maroc.timerdescription}
+                date="13/10/2026"
+              />            
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>
         </div>

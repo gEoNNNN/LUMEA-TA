@@ -30,6 +30,7 @@ interface NavBarProps {
 const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [shouldScrollHome, setShouldScrollHome] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const handleLanguageChange = (lang: 'ro' | 'ru') => {
@@ -70,6 +71,11 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
     scrollToBottom();
   };
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   useEffect(() => {
     if (shouldScrollHome && location.pathname === '/') {
       window.scrollTo({
@@ -85,11 +91,22 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
       <div className="navbar-logo">
         <img src={logo} alt="Logo" />
       </div>
-      <div className="navbar-menu">
-        <Link 
-          to="/" 
-          onClick={handleHomeClick}
-        >
+      {/* Hamburger icon for mobile */}
+      <button
+        className="navbar-hamburger"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Open menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <div className={`navbar-menu${mobileMenuOpen ? ' open' : ''}`}>
+        {/* Show logo inside menu on mobile */}
+        <div className="navbar-logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <Link to="/" onClick={handleHomeClick}>
           {translations[currentLang].home}
         </Link>
         <Link to="/calendar">
@@ -100,7 +117,7 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
         </Link>
         <a href="#" onClick={handleContactsClick}>{translations[currentLang].contacts}</a>
         <div className="language-switcher">
-          <button 
+          <button
             className="language-button"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >

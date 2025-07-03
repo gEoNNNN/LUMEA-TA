@@ -29,7 +29,7 @@ const translations = {
     button: "Подробнее"
   },
   ro: {
-    pageTitle: "Programează-te",
+    pageTitle: "Programate",
     card1title: "Kilimanjaro și Safari",
     card1description: "7 vârfuri și 7 vulcani",
     card1price: "2500 €",

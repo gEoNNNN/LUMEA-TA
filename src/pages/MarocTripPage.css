@@ -71,6 +71,39 @@
   pointer-events: none;
 }
 
+.programrare-page-fog-overlay {
+  position: absolute;
+  top: 13vw;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.3) 70%,
+    rgba(255, 255, 255, 0.7) 85%,
+    rgba(255, 255, 255, 0.9) 95%,
+    white 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .programrare-page-fog-overlay {
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      rgba(255,255,255,0.4) 70%,
+      rgba(255,255,255,0.8) 90%,
+      white 100%
+    );
+  }
+}
+
 .trippage-informations {
   position: relative;
   z-index: 100;
@@ -148,6 +181,14 @@
   height: auto;
   object-fit: cover;
   border-radius: 1vw;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
+}
+
+.trippage-info-list-item img:hover {
+  transform: scale(1.08);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
 .trippage-nevoie-title {
@@ -170,19 +211,4 @@
     margin-left: 10vw;
     height: 3vw;
     margin-top: 5vw;
-}
-
-.trippage-info-list-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 1vw;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-  cursor: pointer;
-}
-
-.trippage-info-list-item img:hover {
-  transform: scale(1.08);
-  z-index: 2;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }

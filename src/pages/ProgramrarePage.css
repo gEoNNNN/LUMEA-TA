@@ -17,6 +17,7 @@
 
 .programrare-page-secondbg {
   position: absolute;
+  display: block;
   width: 100vw;
   margin-top: 0vw;
   z-index: 100;
@@ -159,4 +160,103 @@
 .programrare-page-footer {
     position: relative;
     margin-top: -25vw;
+}
+
+@media (max-width: 768px) {
+
+  .programrare-page-title {
+  font-size: 8vw;
+  left:65vw;
+}
+
+  .programrare-page-secondbg {
+    display: none;
+  }
+  .programrare-page-list {
+    top: 80vw;
+    flex-direction: column;
+    gap: 8vw;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .programrare-page-list-item {
+    min-width: 80vw;
+    max-width: 90vw;
+    width: 90vw;
+    margin: 0 auto 6vw auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .programrare-page-list-item-img {
+    width: 80vw;
+    height: auto;
+    display: block;
+  }
+
+  .programrare-page-list-item-title,
+  .programrare-page-list-item-description,
+  .programrare-page-list-item-price,
+  .programrare-page-list-item-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding: 2vw 1vw;
+    border-radius: 2vw;
+    margin-left: 1vw;
+  }
+
+  .programrare-page-list-item-title {
+    font-size: 6vw;
+    font-weight: 700;
+    margin-bottom: 2vw;
+    margin-top: 15vw;
+  }
+  .programrare-page-list-item-description {
+    font-size: 4vw;
+    margin-top: 30vw;
+    margin-bottom: 2vw;
+  }
+  .programrare-page-list-item-price {
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    margin-top: 40vw;
+  }
+  .programrare-page-list-item-button {
+    font-size: 4vw;
+    padding: 2vw 6vw;
+    border-radius: 2vw;
+    margin-top: 2vw;
+    background: #00417A;
+    color: #fff;
+    border: none;
+    margin-top: 50vw;
+    width: 70vw;
+  }
+  .programrare-page-footer {
+    margin-top: 80vw;
+  }
+  .programrare-page-fog-overlay {
+    height: 100vh;
+    z-index: 1; 
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      rgba(255,255,255,0.4) 70%,
+      rgba(255,255,255,0.8) 90%,
+      white 100%
+    );
+  }
 }

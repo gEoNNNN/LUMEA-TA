@@ -6,6 +6,8 @@ import ProgramrarePage from './pages/ProgramrarePage'
 import Maroc from "./pages/MarocTripPage"
 import China from "./pages/ChinaTripPage"
 import Santiago from "./pages/SantiagoTripPage"
+import InWork from "./pages/inwork"
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/maroc" element={<Maroc />} />
         <Route path="/china" element={<China />} />
         <Route path="/santiago" element={<Santiago />} />
+        <Route path="/inwork" element={<InWork />} />
       </Routes>
     </Router>
   )

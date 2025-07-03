@@ -310,6 +310,9 @@
   .homepage-other-content {
     font-size: 3vw;
   }
+  .homepage-whyus-img{
+  width: 100vw;
+}
 }
 
 @media (max-width: 768px) {

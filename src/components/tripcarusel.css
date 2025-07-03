@@ -104,28 +104,36 @@
     align-items: center;
     gap: 4vw;
   }
-  
+
   .trip-item {
     min-width: 70vw;
     max-width: 80vw;
   }
-  
+
   .trip-card-image {
+    width: 100%;
     height: auto;
   }
-  
+
+  .trip-card-overlay {
+    width: 100%;
+    top: 40vw;
+    padding: 2vw 0;
+  }
+
   .trip-card-title {
     font-size: 4vw;
   }
-  
+
   .trip-card-description {
     font-size: 2.5vw;
+    width: 90%;
   }
-  
+
   .trip-card-price {
     font-size: 3.5vw;
   }
-  
+
   .trip-card-button {
     font-size: 2.8vw;
     padding: 2vw 4vw;

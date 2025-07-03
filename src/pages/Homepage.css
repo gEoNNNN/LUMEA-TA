@@ -246,3 +246,90 @@
 .homepage-footer-section {
   margin-top: 10vw;
 }
+
+.homepage-whyus-img{
+  width: 80vw;
+}
+@media (max-width: 768px) {
+  .homepage-title {
+    font-size: 8vw;
+    margin-bottom: 12vw;
+    margin-right: 0;
+    width: 90vw;
+    text-align: center;
+  }
+
+  .homepage-description {
+    font-size: 4vw;
+    width: 80vw;
+    margin-right: 0;
+    left: 5vw;
+    top: 18vw;
+    text-align: center;
+    position: static;
+  }
+
+  .homepage-button {
+    font-size: 3.5vw;
+    padding: 3vw 6vw;
+    left: 50%;
+    top: auto;
+    position: static;
+    margin-top: 4vw;
+    transform: translateX(-50%);
+  }
+
+  .homepage-trip-title,
+  .homepage-whyus-text,
+  .homepage-gallery-text {
+    font-size: 6vw;
+  }
+
+  .homepage-trip-description {
+    font-size: 3vw;
+  }
+
+  .homepage-trip-button {
+    font-size: 3vw;
+    padding: 2vw 5vw;
+  }
+
+  .homepage-aboutus-title {
+    font-size: 6vw;
+  }
+
+  .homepage-aboutus-description {
+    font-size: 3vw;
+    width: 90vw;
+  }
+
+  .homepage-aboutus-list-text {
+    font-size: 2.5vw;
+  }
+
+  .homepage-other-content {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-aboutus-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4vw;
+    margin-top: 8vw;
+  }
+
+  .homepage-aboutus-image {
+    width: 80vw;
+    margin-left: 0;
+  }
+
+  .homepage-aboutus-content {
+    width: 90vw;
+    gap: 3vw;
+  }
+  .homepage-aboutus-list {
+    margin-left: 23vw;
+  }
+}

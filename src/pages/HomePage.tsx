@@ -19,6 +19,7 @@ import whyusru from "../assets/whyusru.jpg"
 
 const HomePage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+  const [liveChatOpen, setLiveChatOpen] = useState(false);
 
   // Alternative method if the above doesn't work
   const scrollToBottomAlternative = () => {
@@ -41,13 +42,13 @@ const HomePage: React.FC = () => {
       <img src={Bg} className='homepage-main-bg' />
       <div className="homepage-fog-overlay"></div>
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <LiveChat/>
+      <LiveChat open={liveChatOpen} setOpen={setLiveChatOpen} />
       <div className="homepage-content">
         <h1 className='homepage-title'>{translations[currentLang].homepage.title}</h1>
         <h1 className="homepage-description">{translations[currentLang].homepage.description}</h1>
         <button 
           className='homepage-button'
-          onClick={scrollToAboutUs}
+          onClick={() => scrollToAboutUs()}
         >
           {translations[currentLang].homepage.button}
         </button>
@@ -57,7 +58,7 @@ const HomePage: React.FC = () => {
         <TripCarousel currentLang={currentLang}/>
         <button 
           className='homepage-trip-button' 
-          onClick={scrollToBottomAlternative}
+          onClick={() =>setLiveChatOpen(true)}
         >
           {translations[currentLang].homepage.tripButton}
         </button>

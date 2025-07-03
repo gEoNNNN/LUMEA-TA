@@ -15,8 +15,16 @@ const initialMessages: ChatMessage[] = [
   { id: 1, text: "👋 Bun venit pe site-ul Lumea Ta! Cu ce te pot ajuta astăzi?", from: "bot" },
 ];
 
-const LiveChat: React.FC = () => {
-  const [open, setOpen] = useState(false);
+interface LiveChatProps {
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
+}
+
+const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setControlledOpen }) => {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const setOpen = setControlledOpen || setInternalOpen;
+
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);

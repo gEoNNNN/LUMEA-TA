@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './inwork.css';
 import NavBar from '../components/navbar';
 import LiveChat from '../components/LiveChat';
@@ -14,9 +14,12 @@ const translations = {
   }
 };
 
-const InWorkPage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface InWorkPageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
 
+const InWorkPage: React.FC<InWorkPageProps> = ({ currentLang, setCurrentLang }) => {
   return (
     <div className="inwork-page">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />

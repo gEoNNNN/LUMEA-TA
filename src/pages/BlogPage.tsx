@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Blogpage.css';
 import NavBar from "../components/navbar";
 import translations from "./BlogPage.json";
@@ -22,9 +22,12 @@ import cardblog1ru from "../assets/cardblog1ru.jpg";
 import cardblog2ru from "../assets/cardblog2ru.jpg";
 import LiveChat from '../components/LiveChat';
 
-const BlogPage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface BlogPageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
 
+const BlogPage: React.FC<BlogPageProps> = ({ currentLang, setCurrentLang }) => {
   return (
     <div className="blogpage">
         <div className='mainpage'>

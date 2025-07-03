@@ -33,8 +33,12 @@ import Timer from "../components/timer"
 import chinatimer from "../assets/chinatimer.jpg"
 import LiveChat from '../components/LiveChat';
 
-const ChinaTripPage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface ChinaTripPageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
+
+const ChinaTripPage: React.FC<ChinaTripPageProps> = ({ currentLang, setCurrentLang }) => {
   const [liveChatOpen, setLiveChatOpen] = useState(false);
 
   return (

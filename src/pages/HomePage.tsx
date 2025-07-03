@@ -18,8 +18,12 @@ import Footer from "../components/footer"
 import whyusru from "../assets/whyusru.jpg"
 import secondbg from "../assets/pexels-zhicheng-zhang-312594413-15193338 (2).png"
 
-const HomePage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface HomePageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ currentLang, setCurrentLang }) => {
   const [liveChatOpen, setLiveChatOpen] = useState(false);
 
   // Alternative method if the above doesn't work

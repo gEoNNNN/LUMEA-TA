@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProgramrarePage.css';
 import mainbg from "../assets/programarebg.jpg"
 import secondbg from "../assets/image12.png"
@@ -47,9 +47,13 @@ const translations = {
   }
 };
 
-const ProgramrarePage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
-  const navigate = useNavigate(); // Add this line
+interface ProgramrarePageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
+
+const ProgramrarePage: React.FC<ProgramrarePageProps> = ({ currentLang, setCurrentLang }) => {
+  const navigate = useNavigate();
 
   return (
     <div className="programrare-page">

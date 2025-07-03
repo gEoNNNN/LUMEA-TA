@@ -35,8 +35,12 @@ import maroctimer from "../assets/maroctimer.jpg"
 import LiveChat from '../components/LiveChat';
 import secondbg from "../assets/image (1).png"
 
-const TripPage: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+interface MarocTripPageProps {
+  currentLang: 'ro' | 'ru';
+  setCurrentLang: (lang: 'ro' | 'ru') => void;
+}
+
+const TripPage: React.FC<MarocTripPageProps> = ({ currentLang, setCurrentLang }) => {
   const [liveChatOpen, setLiveChatOpen] = useState(false);//
 
   return (

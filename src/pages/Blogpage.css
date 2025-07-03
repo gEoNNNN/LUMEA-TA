@@ -204,3 +204,28 @@
     margin-top: 0.5vw;
     margin-bottom: 0.5vw;
 }
+
+
+.blogpage-articles-2-list-item img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.blogpage-articles-2-list-item img:hover {
+    transform: scale(1.1);
+}
+
+
+.blogpage-articles-5-card {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5vw;
+    margin-bottom: 2vw;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.blogpage-articles-5-card:hover {
+    transform: translateX(-50%) scale(1.1);
+}

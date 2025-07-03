@@ -15,6 +15,11 @@ import card3 from "../assets/blogcard3.jpg";
 import article4image from "../assets/article4image.jpg";
 import cardblog1 from "../assets/cardblog1.jpg";
 import cardblog2 from "../assets/cardblog2.jpg";
+import card1ru from "../assets/blogcard1ru.jpg";
+import card2ru from "../assets/blogcard2ru.jpg";
+import card3ru from "../assets/blogcard3ru.jpg";
+import cardblog1ru from "../assets/cardblog1ru.jpg";
+import cardblog2ru from "../assets/cardblog2ru.jpg";
 
 const BlogPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -46,9 +51,15 @@ const BlogPage: React.FC = () => {
             <p className='blogpage-articles-2-title'>{translations[currentLang].blog.section2title}</p>
             <p className='blogpage-articles-2-descritpion-1'>{translations[currentLang].blog.section2description}</p>
             <ul className='blogpage-articles-2-list'>
-                <li className='blogpage-articles-2-list-item'><img src={card1}/></li>
-                <li className='blogpage-articles-2-list-item'><img src={card2}/></li>
-                <li className='blogpage-articles-2-list-item'><img src={card3}/></li>
+                <li className='blogpage-articles-2-list-item'>
+                    <img src={currentLang === 'ru' ? card1ru : card1}/>
+                </li>
+                <li className='blogpage-articles-2-list-item'>
+                    <img src={currentLang === 'ru' ? card2ru : card2}/>
+                </li>
+                <li className='blogpage-articles-2-list-item'>
+                    <img src={currentLang === 'ru' ? card3ru : card3}/>
+                </li>
             </ul>
         </div>
         <div className='blogpage-articles-3'>
@@ -69,8 +80,8 @@ const BlogPage: React.FC = () => {
             <p className='blogpage-articles-5-descritpion'>{translations[currentLang].blog.section5description2}</p>
             <p className='blogpage-articles-5-descritpion-bold'>{translations[currentLang].blog.section5description3}</p>
             <p className='blogpage-articles-5-descritpion' dangerouslySetInnerHTML={{ __html: translations[currentLang].blog.section5description4 }} />
-            <img src={cardblog1} className='blogpage-articles-5-card' />
-            <img src={cardblog2} className='blogpage-articles-5-card' />
+            <img src={currentLang === 'ru' ? cardblog1ru : cardblog1} className='blogpage-articles-5-card' />
+            <img src={currentLang === 'ru' ? cardblog2ru : cardblog2} className='blogpage-articles-5-card' />
         </div>
         <div className='blogpage-articles-6'>
             <p className='blogpage-articles-6-title'>{translations[currentLang].blog.section6title}</p>

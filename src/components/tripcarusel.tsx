@@ -1,5 +1,6 @@
 import React from 'react';
 import './tripcarusel.css';
+import { useNavigate } from 'react-router-dom';
 import trip1 from '../assets/trip1.jpg';
 import trip2 from '../assets/trip2.jpg';
 import trip3 from '../assets/trip3.jpg';
@@ -36,6 +37,12 @@ interface TripCarouselProps {
 }
 
 const TripCarousel: React.FC<TripCarouselProps> = ({ currentLang }) => {
+  const navigate = useNavigate();
+
+  const handleTripClick = (destination: string) => {
+    navigate(destination);
+  };
+
   return (
     <div className="trip-carousel">
         <div className="trip-carousel-content">
@@ -47,7 +54,12 @@ const TripCarousel: React.FC<TripCarouselProps> = ({ currentLang }) => {
                             <h1 className='trip-card-title'>{translations[currentLang].trip1title}</h1>
                             <p className='trip-card-description'>{translations[currentLang].trip1description}</p>
                             <p className='trip-card-price'>{translations[currentLang].trip1price}</p>
-                            <button className='trip-card-button'>{translations[currentLang].tripbutton}</button>
+                            <button 
+                              className='trip-card-button'
+                              onClick={() => handleTripClick('/maroc')}
+                            >
+                              {translations[currentLang].tripbutton}
+                            </button>
                         </div>
                     </div>
                 </li>
@@ -58,7 +70,12 @@ const TripCarousel: React.FC<TripCarouselProps> = ({ currentLang }) => {
                             <h1 className='trip-card-title'>{translations[currentLang].trip2title}</h1>
                             <p className='trip-card-description'>{translations[currentLang].trip2description}</p>
                             <p className='trip-card-price'>{translations[currentLang].trip2price}</p>
-                            <button className='trip-card-button'>{translations[currentLang].tripbutton}</button>
+                            <button 
+                              className='trip-card-button'
+                              onClick={() => handleTripClick('/china')}
+                            >
+                              {translations[currentLang].tripbutton}
+                            </button>
                         </div>
                     </div>
                 </li>
@@ -69,7 +86,12 @@ const TripCarousel: React.FC<TripCarouselProps> = ({ currentLang }) => {
                             <h1 className='trip-card-title'>{translations[currentLang].trip3title}</h1>
                             <p className='trip-card-description'>{translations[currentLang].trip3description}</p>
                             <p className='trip-card-price'>{translations[currentLang].trip3price}</p>
-                            <button className='trip-card-button'>{translations[currentLang].tripbutton}</button>
+                            <button 
+                              className='trip-card-button'
+                              onClick={() => handleTripClick('/santiago')}
+                            >
+                              {translations[currentLang].tripbutton}
+                            </button>
                         </div>
                     </div>
                 </li>

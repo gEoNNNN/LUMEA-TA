@@ -9,11 +9,10 @@ import instagram from "../assets/instagramc.svg"
 import tiktok from "../assets/tiktokc.svg"
 import youtube from "../assets/youtube.svg"
 
-
 const translations = {
   ru: {
-    title: "Контакт",
-    text: "Напишите нам или позвоните – мы действительно любим быть рядом с вами!",
+    title: "ДЛЯ СВЯЗИ",
+    text: "Напишите нам с любовью или позвоните нам – мы действительно любим быть рядом с вами!",
     name: "Наталья",
     description: "Координатор и опытный гид",
     number: "+373 69 69 22 65",
@@ -44,16 +43,43 @@ const Contacts: React.FC<ContactsProps> = ({ currentLang }) => {
       <p className="contacts-number">{translations[currentLang].number}</p>
       <p className="contacts-email">{translations[currentLang].email}</p>
       <ul>
-        <li><img src={viber} /></li>
-        <li><img src={whatsapp} /></li>
-        <li><img src={telegram} /></li>
-        <li><img src={facebook} /></li>
-        <li><img src={instagram} /></li>
-        <li><img src={tiktok} /></li>
-        <li><img src={youtube} /></li>
+        <li>
+          <a href="viber://chat?number=%2B37369692265" target="_blank" rel="noopener noreferrer">
+            <img src={viber} alt="Viber" />
+          </a>
+        </li>
+        <li>
+          <a href="https://api.whatsapp.com/send/?phone=37369692265&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21+%D0%96%D0%B5%D0%BB%D0%B0%D1%8E+%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C+%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            <img src={whatsapp} alt="WhatsApp" />
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/NataliaSemenciuc" target="_blank" rel="noopener noreferrer">
+            <img src={telegram} alt="Telegram" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/lumeata" target="_blank" rel="noopener noreferrer">
+            <img src={facebook} alt="Facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/lumeata.md/" target="_blank" rel="noopener noreferrer">
+            <img src={instagram} alt="Instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@lumeata.md" target="_blank" rel="noopener noreferrer">
+            <img src={tiktok} alt="TikTok" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@LumeaTa_md" target="_blank" rel="noopener noreferrer">
+            <img src={youtube} alt="YouTube" />
+          </a>
+        </li>
       </ul>
     </div>
-
   );
 };
 

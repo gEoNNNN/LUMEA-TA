@@ -89,6 +89,14 @@
   border-radius: 1vw;
   cursor: pointer;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.homepage-button:hover {
+  background-color: #003366;
+  transform: translateY(-0.5vw);
+  box-shadow: 0 0.8vw 1.5vw rgba(0, 65, 122, 0.3);
 }
 
 .homepage-trip-section {
@@ -233,4 +241,8 @@
 
 .homepage-gallery-img {
   width: 100vw;
+}
+
+.homepage-footer-section {
+  margin-top: 10vw;
 }

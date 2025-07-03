@@ -16,6 +16,21 @@ import day4Image from "../assets/chinacalendar4.jpg";
 import day5Image from "../assets/chinacalendar5.jpg";
 import day6Image from "../assets/chinacalendar6.jpg";
 import day7Image from "../assets/chinacalendar7.jpg";
+import priceinfo1ro from "../assets/chinapriceinforo1.jpg"
+import priceinfo2ro from "../assets/chinapriceinforo2.jpg"
+import priceinfo3ro from "../assets/chinapriceinforo3.jpg"
+import priceinfo1ru from "../assets/chinapriceinforu1.jpg"
+import priceinfo2ru from "../assets/chinapriceinforu2.jpg"
+import priceinfo3ru from "../assets/chinapriceinforu3.jpg"
+import Echpament from "../components/echipamnt"
+import allineedtoknoeimg1 from "../assets/marocalltoknow1.jpg"
+import allineedtoknoeimg2 from "../assets/marocalltoknow2.jpg"
+import allineedtoknoeimg3 from "../assets/marocalltoknow3.jpg"
+import allineedtoknoeimg4 from "../assets/marocalltoknow1.jpg"
+import allineedtoknoeimg5 from "../assets/marocalltoknow5.jpg"
+import blueline from "../assets/longblueline.svg"
+import Timer from "../components/timer"
+import chinatimer from "../assets/chinatimer.jpg"
 
 const ChinaTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
@@ -52,6 +67,45 @@ const ChinaTripPage: React.FC = () => {
                 day6Image,
                 day7Image,
               ]}/>
+              <h1 className="trippage-info-title">{translations[currentLang].China.sectionPriceTitle}</h1>
+            <h1 className="trippage-price">{translations[currentLang].China.sectionPriceDescritpion}</h1>
+            <ul className="trippage-info-list">
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo1ru : priceinfo1ro} />
+              </li>
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo2ru : priceinfo2ro} />
+              </li>
+              <li className="trippage-info-list-item">
+                <img src={currentLang === 'ru' ? priceinfo3ru : priceinfo3ro} />
+              </li>
+            </ul>
+            <Echpament currentLang={currentLang} itemDescriptions={translations[currentLang].China.echipament}/>
+            <Calendar 
+                currentLang={currentLang}
+                buttonCount={translations[currentLang].China.allneedtoknow.length} 
+                buttonTexts={translations[currentLang].China.allneedtoknow} 
+                buttonContents={translations[currentLang].China.allneedtoknowContent}
+                buttonImages={[
+                allineedtoknoeimg1,
+                allineedtoknoeimg2,
+                allineedtoknoeimg3,
+                allineedtoknoeimg4,
+                allineedtoknoeimg5
+              ]}/>
+             <h1 className='trippage-nevoie-title'>{translations[currentLang].China.nevoietitle}</h1>
+              <div 
+                className='trippage-nevoie-descritpion' 
+                dangerouslySetInnerHTML={{ __html: translations[currentLang].China.nevoiedescription }}
+              />
+              <img src={blueline} className='trippage-nevoie-blueline' />
+               <Timer 
+                currentLang={currentLang}
+                image={chinatimer}
+                title={translations[currentLang].China.timertitle}
+                description={translations[currentLang].China.timerdescription}
+                date="13/10/2026"
+              />      
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>
         </div>

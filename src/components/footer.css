@@ -22,17 +22,28 @@
   align-items: center;
 }
 
-.footer-nav a {
+.footer-nav-button {
   font-family: "Raleway", sans-serif;
   font-size: 1.1vw;
   font-weight: 500;
   color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0;
+  outline: none !important;
 }
 
-.footer-nav a:hover {
+.footer-nav-button:hover {
   color: #cccccc;
+}
+
+.footer-nav-button:focus,
+.footer-nav-button:focus-visible {
+  outline: none !important;
+  border: none !important;
 }
 
 .footer-top-button {
@@ -65,7 +76,7 @@
   }
   
   .footer-copyright p,
-  .footer-nav a,
+  .footer-nav-button,
   .footer-top-button {
     font-size: 3vw;
   }

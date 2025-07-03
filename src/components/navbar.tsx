@@ -1,11 +1,11 @@
 import './navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import navbarbg from "../assets/navbarbg.png"
 import logo from "../assets/logo.svg"
 import tiktok from "../assets/tiktok.svg"
 import facebook from "../assets/facebook.svg"
 import instagram from "../assets/instagram.svg"
-import { useState } from 'react';
 
 const translations = {
   ru: {
@@ -29,11 +29,56 @@ interface NavBarProps {
 
 const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [shouldScrollHome, setShouldScrollHome] = useState(false);
+  const location = useLocation();
 
   const handleLanguageChange = (lang: 'ro' | 'ru') => {
     setCurrentLang(lang);
     setDropdownOpen(false);
   };
+
+  const handleHomeClick = () => {
+    setShouldScrollHome(true);
+  };
+
+  const scrollToBottom = () => {
+    // Find the contacts or footer element directly
+    const contactsElement = document.querySelector('.contacts');
+    const footerElement = document.querySelector('.footer');
+    
+    if (contactsElement) {
+      contactsElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else if (footerElement) {
+      footerElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // Fallback: scroll to end of document
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleContactsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollToBottom();
+  };
+
+  useEffect(() => {
+    if (shouldScrollHome && location.pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      setShouldScrollHome(false);
+    }
+  }, [location.pathname, shouldScrollHome]);
 
   return (
     <nav className="navbar" style={{ backgroundImage: `url(${navbarbg})` }}>
@@ -41,10 +86,19 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="navbar-menu">
-        <Link to="/">{translations[currentLang].home}</Link>
-        <Link to="/calendar">{translations[currentLang].calendar}</Link>
-        <Link to="/blog">{translations[currentLang].blog}</Link>
-        <a href="#contacts">{translations[currentLang].contacts}</a>
+        <Link 
+          to="/" 
+          onClick={handleHomeClick}
+        >
+          {translations[currentLang].home}
+        </Link>
+        <Link to="/calendar">
+          {translations[currentLang].calendar}
+        </Link>
+        <Link to="/blog">
+          {translations[currentLang].blog}
+        </Link>
+        <a href="#" onClick={handleContactsClick}>{translations[currentLang].contacts}</a>
         <div className="language-switcher">
           <button 
             className="language-button"
@@ -61,13 +115,13 @@ const Navbar: React.FC<NavBarProps> = ({ currentLang, setCurrentLang }) => {
         </div>
       </div>
       <div className="navbar-social">
-        <a href="#" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@lumeata.md" target="_blank" rel="noopener noreferrer">
           <img src={tiktok} alt="TikTok" />
         </a>
-        <a href="#" aria-label="Facebook">
+        <a href="https://www.facebook.com/lumeata" target="_blank" rel="noopener noreferrer">
           <img src={facebook} alt="Facebook" />
         </a>
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/lumeata.md/" target="_blank" rel="noopener noreferrer">
           <img src={instagram} alt="Instagram" />
         </a>
       </div>

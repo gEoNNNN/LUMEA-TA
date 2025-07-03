@@ -12,20 +12,20 @@ import Contacts from "../components/contacts";
 
 const translations = {
   ru: {
-    pageTitle: "Программы",
+    pageTitle: "Запланировано",
     card1title: "Килиманджаро и Сафари",
-    card1description: "7 вершин и 7 вулканов",
+    card1description: "7 Вершин и 7 Вулканов",
     card1price: "2500 €",
-    card2title: "Погрузитесь в мир Перу",
-    card2description: "Почему стоит посетить этот регион?",
+    card2title: "Погрузись в мир Перу",
+    card2description: "Почему стоит посетить этот край?",
     card2price: "2590 €",
     card3title: "Путь Сантьяго",
-    card3description: "Путь к себе через бесконечные горизонты",
+    card3description: "Северный путь Сантьяго: путь к себе через бескрайние горизонты",
     card3price: "В процессе €",
     card4title: "Казбек",
-    card4description: "Восхождение на вершину кавказской легенды",
+    card4description: "Восхождение к вершине Кавказской легенды",
     card4price: "890 €",
-    button: "Забронировать место"
+    button: "Подробнее"
   },
   ro: {
     pageTitle: "Programează-te",

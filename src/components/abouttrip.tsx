@@ -35,6 +35,30 @@ const translations = {
 };
 
 const AboutTrip: React.FC<AboutTripProps> = ({ currentLang, period, duration, difficulty, price }) => {
+  const scrollToBottom = () => {
+    // Method inspired by navbar.tsx - find contacts or footer element directly
+    const contactsElement = document.querySelector('.contacts');
+    const footerElement = document.querySelector('.footer');
+    
+    if (contactsElement) {
+      contactsElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else if (footerElement) {
+      footerElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // Fallback: scroll to end of document
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="abouttrip">
       <h1 className='abouttrip-title'>{translations[currentLang].title}</h1>
@@ -68,7 +92,12 @@ const AboutTrip: React.FC<AboutTripProps> = ({ currentLang, period, duration, di
           </div>
         </li>
       </ul>
-      <button className="abouttrip-button">{translations[currentLang].button}</button>
+      <button 
+        className="abouttrip-button" 
+        onClick={scrollToBottom}
+      >
+        {translations[currentLang].button}
+      </button>
       <p className="abouttrip-description">{translations[currentLang].description}</p>
     </div>
   );

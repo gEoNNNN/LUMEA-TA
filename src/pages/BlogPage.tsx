@@ -54,7 +54,7 @@ const BlogPage: React.FC = () => {
             <p className='blogpage-articles-2-descritpion-1'>{translations[currentLang].blog.section2description}</p>
             <ul className='blogpage-articles-2-list'>
                 <li className='blogpage-articles-2-list-item'>
-                    <img src={currentLang === 'ru' ? card1ru : card1}/>
+                    <img src={currentLang === 'ru' ? card1ru : card1} />
                 </li>
                 <li className='blogpage-articles-2-list-item'>
                     <img src={currentLang === 'ru' ? card2ru : card2}/>

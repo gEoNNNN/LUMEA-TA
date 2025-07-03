@@ -35,11 +35,12 @@ import LiveChat from '../components/LiveChat';
 
 const ChinaTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+  const [liveChatOpen, setLiveChatOpen] = useState(false);
 
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <LiveChat/>
+      <LiveChat open={liveChatOpen} setOpen={setLiveChatOpen} />
       <img src={bg} className='trippage-bg'/>
       <div className="trippage-fog-overlay"></div>
       <div className="trippage-content">
@@ -55,6 +56,7 @@ const ChinaTripPage: React.FC = () => {
               text={translations[currentLang].China.tripText}
               image={chinadescription}
             />
+            <h1 className="trippage-invisible-mark">h</h1>
             <Calendar 
                 currentLang={currentLang}
                 buttonCount={translations[currentLang].China.calendarDays.length} 
@@ -107,6 +109,7 @@ const ChinaTripPage: React.FC = () => {
                 title={translations[currentLang].China.timertitle}
                 description={translations[currentLang].China.timerdescription}
                 date="13/10/2026"
+                setLiveChatOpen={setLiveChatOpen}
               />      
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>

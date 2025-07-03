@@ -71,26 +71,53 @@
 }
 
 @media (max-width: 768px) {
+  .trip-description-title {
+    font-size: 7vw;
+    text-align: center;
+    margin-left: -11vw;
+  }
+
+  .trip-description-description {
+    font-size: 5vw;
+    max-width: 90vw;
+    text-align: center;
+    margin: 0 auto 4vw auto;
+    margin-left: -11vw;
+  }
+
   .trip-description-content {
     flex-direction: column;
     gap: 3vw;
+    align-items: center;
   }
-  
+
   .trip-description-text-section,
   .trip-description-image-section {
     max-width: 100%;
+    width: 100%;
+    text-align: center;
   }
-  
-  .trip-description-title {
-    font-size: 6vw;
-  }
-  
-  .trip-description-description {
-    font-size: 3vw;
-    max-width: 90vw;
-  }
-  
+
   .trip-description-text {
-    font-size: 2.5vw;
+    font-size: 4vw;
+    text-align: center;
+    margin: 0 auto 3vw auto;
+    max-width: 90vw;
+    margin-left: -11vw;
+  }
+
+  .trip-description-image-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .trip-description-image {
+    width: 80vw;
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-left: -6vw;
   }
 }

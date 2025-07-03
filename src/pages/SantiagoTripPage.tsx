@@ -33,10 +33,9 @@ import LiveChat from '../components/LiveChat';
 
 const SantiagoTripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ru');
-
-  // Function that prevents language change - always keeps it as 'ru'
+  const [liveChatOpen, setLiveChatOpen] = useState(false);
+  
   const preventLanguageChange = (lang: 'ro' | 'ru') => {
-    // Do nothing - language stays as 'ru'
     console.log(`Language change to ${lang} blocked - staying as 'ru'`);
   };
 
@@ -47,7 +46,7 @@ const SantiagoTripPage: React.FC = () => {
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={preventLanguageChange} />
-      <LiveChat/>
+      <LiveChat open={liveChatOpen} setOpen={setLiveChatOpen} />
       <img src={bg} className='trippage-bg'/>
       <div className="trippage-fog-overlay"></div>
       <div className="trippage-content">
@@ -63,6 +62,7 @@ const SantiagoTripPage: React.FC = () => {
               text={translations[currentLang].Santiago.tripText}
               image={santiagodescription}
             />
+            <h1 className="trippage-invisible-mark">h</h1>
             <Calendar 
                 currentLang={currentLang}
                 buttonCount={translations[currentLang].Santiago.calendarDays.length} 
@@ -113,6 +113,7 @@ const SantiagoTripPage: React.FC = () => {
                 title={translations[currentLang].Santiago.timertitle}
                 description={translations[currentLang].Santiago.timerdescription}
                 date="13/10/2026"
+                setLiveChatOpen={setLiveChatOpen}
               />        
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>

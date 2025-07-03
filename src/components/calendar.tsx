@@ -16,6 +16,7 @@ interface CalendarProps {
   buttonTexts: string[];
   buttonContents?: string[];
   buttonImages?: string[];
+  id?: string;
 }
 
 const Calendar: React.FC<CalendarProps> = ({ currentLang, buttonCount, buttonTexts, buttonContents, buttonImages }) => {

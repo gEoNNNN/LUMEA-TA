@@ -16,18 +16,19 @@ import gallery from "../assets/Galerie.jpg"
 import Contacts from "../components/contacts"
 import Footer from "../components/footer"
 import whyusru from "../assets/whyusru.jpg"
+import secondbg from "../assets/pexels-zhicheng-zhang-312594413-15193338 (2).png"
 
 const HomePage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
   const [liveChatOpen, setLiveChatOpen] = useState(false);
 
   // Alternative method if the above doesn't work
-  const scrollToBottomAlternative = () => {
-    const footerElement = document.querySelector('.homepage-footer-section');
-    if (footerElement) {
-      footerElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToBottomAlternative = () => {
+  //   const footerElement = document.querySelector('.homepage-footer-section');
+  //   if (footerElement) {
+  //     footerElement.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   // Function to scroll to the about us section
   const scrollToAboutUs = () => {
@@ -40,6 +41,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="homepage">
       <img src={Bg} className='homepage-main-bg' />
+      <img src={secondbg} className='homepage-second-bg' />
       <div className="homepage-fog-overlay"></div>
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
       <LiveChat open={liveChatOpen} setOpen={setLiveChatOpen} />

@@ -33,18 +33,21 @@ import blueline from "../assets/longblueline.svg"
 import Timer from "../components/timer"
 import maroctimer from "../assets/maroctimer.jpg"
 import LiveChat from '../components/LiveChat';
+import secondbg from "../assets/image (1).png"
 
 const TripPage: React.FC = () => {
   const [currentLang, setCurrentLang] = useState<'ro' | 'ru'>('ro');
+  const [liveChatOpen, setLiveChatOpen] = useState(false);//
 
   return (
     <div className="trippage">
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
-      <LiveChat/>
+      <LiveChat open={liveChatOpen} setOpen={setLiveChatOpen} />
       <img src={bg} className='trippage-bg'/>
+      <img src={secondbg} className='trippage-second-bg'/>
       <div className="trippage-fog-overlay"></div>
+      <h1 className="trippage-title">{translations[currentLang].Maroc.title}</h1>
       <div className="trippage-content">
-        <h1 className="trippage-title">{translations[currentLang].Maroc.title}</h1>
         <h1 className="trippage-description">{translations[currentLang].Maroc.description}</h1>
       </div>
       <div className='trippage-informations'>
@@ -56,7 +59,8 @@ const TripPage: React.FC = () => {
               text={translations[currentLang].Maroc.tripText}
               image={marocdescription}
             />
-            <Calendar 
+            <h1 className="trippage-invisible-mark">h</h1>
+            <Calendar id= "calendar"
                 currentLang={currentLang}
                 buttonCount={translations[currentLang].Maroc.calendarDays.length} 
                 buttonTexts={translations[currentLang].Maroc.calendarDays} 
@@ -82,7 +86,7 @@ const TripPage: React.FC = () => {
                 <img src={currentLang === 'ru' ? priceinfo2ru : priceinfo2ro} />
               </li>
               <li className="trippage-info-list-item">
-                <img src={currentLang === 'ru' ? priceinfo3ru : priceinfo3ro} />
+                <img src={currentLang === 'ru' ? priceinfo3ru : priceinfo3ro}/>
               </li>
             </ul>
             <Echpament currentLang={currentLang} itemDescriptions={translations[currentLang].Maroc.echipament}/>
@@ -110,6 +114,7 @@ const TripPage: React.FC = () => {
                 title={translations[currentLang].Maroc.timertitle}
                 description={translations[currentLang].Maroc.timerdescription}
                 date="13/10/2026"
+                setLiveChatOpen={setLiveChatOpen}
               />            
             <Contacts currentLang={currentLang}/>
             <Footer currentLang={currentLang}/>

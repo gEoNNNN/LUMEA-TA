@@ -3,7 +3,7 @@ import "./LiveChat.css";
 import livechatopenbg from "../assets/Group 71.png"
 import closebutton from "../assets/closebutton.png"
 import sendicon from "../assets/sendicon.png"
-import chatboticon from "../assets/logo.svg"
+import chatboticon from "../assets/chatlogo.svg"
 
 type ChatMessage = {
   id: number;

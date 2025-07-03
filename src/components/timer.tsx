@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Add this import
 import "./timer.css"
 
 const translations = {
@@ -25,16 +26,19 @@ interface TimerProps {
   image: string;
   title: string;
   description: string;
-  date: string; // Format: "13/10/2003" or any valid date format
+  date: string;
+  setLiveChatOpen?: (open: boolean) => void; // Add this line
 }
 
-const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, date }) => {
+const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, date, setLiveChatOpen }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0
   });
+
+  const navigate = useNavigate(); // Add this line
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -61,6 +65,23 @@ const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, d
 
     return () => clearInterval(timer);
   }, [date]);
+
+  const handleCalendarScroll = () => {
+    window.location.hash = "#calendar";
+    setTimeout(() => {
+      const calendarElement = document.getElementById('calendar');
+      if (calendarElement) {
+        calendarElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  const handleInfoTitleScroll = () => {
+    const infoTitleElement = document.querySelector('.trippage-invisible-mark');
+    if (infoTitleElement) {
+      infoTitleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="timer">
@@ -94,8 +115,18 @@ const Timer: React.FC<TimerProps> = ({ currentLang, image, title, description, d
       </div>
 
       <div className="timer-buttons">
-        <button className='timer-button-1'>{translations[currentLang].buttonText1}</button>
-        <button className='timer-button-2'>{translations[currentLang].buttonText2}</button>
+        <button
+          className='timer-button-1'
+          onClick={handleInfoTitleScroll}
+        >
+          {translations[currentLang].buttonText1}
+        </button>
+        <button
+          className='timer-button-2'
+          onClick={() => setLiveChatOpen && setLiveChatOpen(true)}
+        >
+          {translations[currentLang].buttonText2}
+        </button>
       </div>
     </div>
   );

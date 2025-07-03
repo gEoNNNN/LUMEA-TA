@@ -19,7 +19,7 @@ interface CalendarProps {
 }
 
 const Calendar: React.FC<CalendarProps> = ({ currentLang, buttonCount, buttonTexts, buttonContents, buttonImages }) => {
-  const [activeButton, setActiveButton] = useState<number | null>(null);
+  const [activeButton, setActiveButton] = useState<number | null>(0);
 
   const renderButtons = () => {
     const buttons = [];

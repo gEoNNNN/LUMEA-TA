@@ -60,9 +60,13 @@ const ProgramrarePage: React.FC<ProgramrarePageProps> = ({ currentLang, setCurre
       <NavBar currentLang={currentLang} setCurrentLang={setCurrentLang} />
       <LiveChat/>
       <img src={mainbg} className="programrare-page-mainbg" />
-      <div className="programrare-page-fog-overlay"></div>
       <img src={secondbg} className="programrare-page-secondbg" />
-      <h1 className="programrare-page-title">{translations[currentLang].pageTitle}</h1>
+      <div className="programrare-page-fog-overlay"></div>
+      {currentLang === 'ro' ? (
+        <h1 className="programrare-page-title">{translations['ro'].pageTitle}</h1>
+      ) : (
+        <h1 className="programrare-page-title-ru">{translations['ru'].pageTitle}</h1>
+      )}
       <ul className="programrare-page-list">
         <li className="programrare-page-list-item">
           <img src={card1} className="programrare-page-list-item-img" />

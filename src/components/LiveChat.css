@@ -20,7 +20,7 @@
   height: auto;
   z-index: 1000;
   cursor: pointer;
-  pointer-events: none; /* So the button div on top is clickable */
+  pointer-events: none; 
 }
 
 .livechat-open-btn-bg {
@@ -125,7 +125,7 @@
   margin-left: 20px;
   margin-bottom: -10px;
   width: 90%; 
-  max-width: 450px;  /* Increased max-width */
+  max-width: 450px; 
   padding: 20px 40px;
   font-size: 32px;
   border: 1px solid #ffffff;
@@ -143,8 +143,8 @@
   bottom:30px;
   display: flex;
   align-items: center;
-  width: 700px;      /* Increased from 520px */
-  max-width: 70%;    /* Slightly wider */
+  width: 700px;      
+  max-width: 70%;
   z-index: 2021;
 }
 

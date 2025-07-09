@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./LiveChat.css";
 import livechatopenbg from "../assets/Group 71.png"
 import closebutton from "../assets/closebutton.png"
@@ -28,7 +28,16 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  // Auto-scroll to bottom when messages change
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   React.useEffect(() => {
     if (open) setVisible(true);
@@ -48,6 +57,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       setMessage("");
     }
   };
+
   return (
     <div>
       {!open && (
@@ -78,6 +88,8 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
                 {msg.text}
               </div>
             ))}
+            {/* Invisible element to scroll to */}
+            <div ref={messagesEndRef} />
           </div>
           <div className="livechat-input-row">
             <input
